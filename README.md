@@ -10,6 +10,7 @@
 ## Why I Chose This Issue
 
 [1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+
 Simply because it doesn't sound too complicated. According to the github description, there is no documentation of how the Burr UI Server works and thus needs documentation for new users coming in and learn how to run the server. This takes time learning the program of the UI Server hoping to learn some web development skills and we just have to document its functionality and purpose. I have done some web development before so its nice to continue that!
 
 ---
