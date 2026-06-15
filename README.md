@@ -3,7 +3,7 @@
 **Contribution Number:** [1 / 2 / 3]  
 **Student:** Serafin O. Gargantiel III.
 **Issue:** https://github.com/apache/burr/issues/272 
-**Status:** Phase 1
+**Status:** Phase 2
 
 ---
 
@@ -11,27 +11,32 @@
 
 Simply because it doesn't sound too complicated. According to the github description, there is no documentation of how the Burr UI Server works and thus needs documentation for new users coming in and learn how to run the server. This takes time learning the program of the UI Server hoping to learn some web development skills and we just have to document its functionality and purpose. I have done some web development before so its nice to continue that!
 
-The Burr library includes a UI server for visualizing and monitoring application state, but there is no documentation covering how to install it, run it, or use its features. New users have no reference point for getting the UI up and running.
-
 ---
 
 ## Understanding the Issue
 
 ### Problem Description
 
-[In your own words, what's broken or missing?]
+The Burr library includes a UI server for visualizing and monitoring application state, but there is no documentation covering how to install it, run it, or use its features. New users have no reference point for getting the UI up and running.
 
 ### Expected Behavior
 
-[What should happen?]
+There should be some sort of documentation that includes:
+- How to install the UI server?
+- How to launch the UI server?
+- What port it runs on and how to access it in the browser?
+- Optional command documentatations like like demo data?
+- What features are available in the UI?
 
 ### Current Behavior
 
-[What actually happens?]
+There are no instructions and documentations of how to install, what to install, what the burr UI do, and how to use it.
+Only mention of the UI server in the docs is a single line in install.rst saying running 'burr' will "open up Burr's telemetry UI."
 
 ### Affected Components
 
-[Which parts of the codebase are involved?]
+- `docs/getting_started/` — new file `ui.rst` needs to be created
+- `docs/getting_started/index.rst` — needs `ui` added to its toctree
 
 ---
 
@@ -39,19 +44,25 @@ The Burr library includes a UI server for visualizing and monitoring application
 
 ### Environment Setup
 
-[Notes on setting up your local development environment - challenges you faced, how you solved them]
+1. Forked "apache/burr" and cloned locally in terminal
+2. Created a virtual environment with "python3 -m venv venv && source venv/bin/activate" to help access burr UI server
+3. Attempted to install with "pip install "burr[tracking]". The server launched but crashed due to missing frontend build directory ("build/static" does not exist when running from source)
+4. Installed "pip install "burr[start]"" to get the correct dependencies including "loguru"
+5. Note that the correct package name is now "apache-burr", not "burr". This is itself undocumented for new users
 
 ### Steps to Reproduce
 
-1. [Step 1]
-2. [Step 2]
-3. [Observed result]
+1. Install Burr and attempt to find documentation on running the UI server
+2. Check "docs/getting_started/" and there is no UI specific documentation exists
+3. The only reference is one line in "install.rst" with no further explanation of what to do after running "burr"
+4. Run "burr" from a cloned repo and it crashes with "RuntimeError: Directory 'build/static' does not exist"
+5. Run "burr" from the installed package and the server starts on port 7241 but new users have no documentation telling them this
 
 ### Reproduction Evidence
 
-- **Commit showing reproduction:** [Link to commit in your fork]
+- **Commit showing reproduction:** https://github.com/iamSerafinnn/burr/tree/fix-issue-272
 - **Screenshots/logs:** [If applicable]
-- **My findings:** [What you discovered during reproduction]
+- **My findings:** The documentation gap is confirmed. "docs/getting_started/index.rst" has no entry for the UI server. The setup process itself involves multiple undocumented steps such as correct install target, package name change from "burr" to "apache-burr", running from installed package vs. source clone.
 
 ---
 
@@ -59,30 +70,44 @@ The Burr library includes a UI server for visualizing and monitoring application
 
 ### Analysis
 
-[Your analysis of the root cause - what's causing the issue?]
+The root cause of the issue is that no one has yet written a documentation of the Burr UI server. Though the "docs/getting_started/" does walk users through on installation with a simple example, it does not explain the UI server. The "index.rst" toctree has no entry for the docs, meaning even if a page existed, it wouldn't appear in the navigation.
 
 ### Proposed Solution
 
-[High-level description of your fix approach]
+My proposed approach for the solution is to first create a new file on "docs/getting_started/ui.rst", serving as a reference to the documentaion of the Burr UI server. I will then add it to the "docs/getting_started/index.rst" toctree so it appears in the navigation.
 
 ### Implementation Plan
 
 Using UMPIRE framework (adapted):
 
-**Understand:** [Restate the problem]
+**Understand:** The Burr UI server does not have any documentation page. New users will find it confusing on how to install, launch, and use the Burr UI server. The only mention of the server is on a single line in "install.rst".
 
-**Match:** [What similar patterns/solutions exist in the codebase?]
+**Match:** The existing "docs/getting_started/install.rst" servers as a format reference of RST syntac, Apache license header , and ".. code-block:: bash" for commands. I plan for the new page to follow the same structure and style as well.
 
-**Plan:** [Step-by-step implementation plan]
-1. [Modify file X to do Y]
-2. [Add function Z]
-3. [Update tests]
+**Plan:**
+1. Create the "docs/getting_started/ui.rst" documentation highlight the following sections:
+    - Overview of what the Burr UI server is.
+    - How to install the server using (pip install "apache-burr[start]").
+    - How to launch the server using the "burr" command that runs on port 7241.
+    - How to access the server in the browser using the url "http://localhost:7241".
+    - Overview of some optional command like demo data and custom port.
+    - Overview of the features of the Burr UI server like projects, demos, and telemtry.
+2. Add ui to the toctree in docs/getting_started/index.rst
 
-**Implement:** [Link to your branch/commits as you work]
+**Implement:** https://github.com/iamSerafinnn/burr/tree/fix-issue-272
 
-**Review:** [Self-review checklist - does it follow the project's contribution guidelines?]
+**Review:**
+This contribution must:
+1. Follow RST formatting conventions that are referenced in the existing docs.
+2. Include an Apache license header that are required for all files in the project.
+3. Match the tone and structure of "install.rst" and "simple-example.rst".
+4. Checked "CONTRIBUTING.rst" for any doc-specific contribution guidelines.
 
-**Evaluate:** [How will you verify it works?]
+**Evaluate:**
+To verify if my contribution worked, I will:
+- Build the documents locally using Sphinx and confirm the new page renders correctly
+- Verify that the Burr UI appears in the Getting Started navigation.
+- Confirm that all code blocks and commands are accurate by testing them manually.
 
 ---
 
