@@ -3,7 +3,7 @@
 **Contribution Number:** [1 / 2 / 3]  
 **Student:** Serafin O. Gargantiel III.
 **Issue:** https://github.com/apache/hertzbeat/issues/2075
-**Status:** Phase 2 - In Progress
+**Status:** Phase III - In Progress
 
 ---
 
@@ -108,19 +108,21 @@ Using UMPIRE framework (adapted):
 
 ## Implementation Notes
 
-### Week [X] Progress
-
-[What you built this week, challenges faced, decisions made]
-
-### Week [Y] Progress
-
-[Continue documenting as you work]
+### Week 1 Progress
+Used a docusaurus swizzling to eject the default BlogPostItems component and created a custom
+card-based grid layout for a starting refactored layout.
 
 ### Code Changes
 
-- **Files modified:** [List]
-- **Key commits:** [Links to important commits]
+- **Files modified:**
+    - "home/src/theme/BlogPostItems/index.js" - (Created) Swizzle to refactored card grid layout
+    - "home/src/theme/BlogPostItems/styles.css" (Created) Styles the BlogCards and the Grids
+- **Key commits:** 
+    - https://github.com/iamSerafinnn/Hertzbeat-Site-Refactor/tree/refactor-blog-ui
 - **Approach decisions:** [Why you chose certain approaches]
+    - Used swizzling instead of wrapping. This allows me to have full control of over the blog list
+      rendering into a card grid instead.
+    - Used CSS Grid for layout to keep dependencies minimal instead of using a UI library.
 
 ---
 
