@@ -3,7 +3,7 @@
 **Contribution Number:** [1 / 2 / 3]  
 **Student:** Serafin O. Gargantiel III.
 **Issue:** https://github.com/apache/hertzbeat/issues/2075
-**Status:** Phase III - In Progress
+**Status:** Phase IV - In Progress
 
 ---
 
@@ -103,6 +103,9 @@ Using UMPIRE framework (adapted):
 ### Manual Testing
 
 [What you tested manually and results]
+I ran npm run start to launch the program locally with Node v20.20.2. It verified that the blog page at that local
+server renders a 3-column card grid with titles and other relevant information. I also confirmed that responsive
+behavior as well is present, featuring hover effects on cards.
 
 ---
 
@@ -128,15 +131,25 @@ card-based grid layout for a starting refactored layout.
 
 ## Pull Request
 
-**PR Link:** [GitHub PR URL when submitted]
+**PR Link:** https://github.com/apache/hertzbeat/pull/4182
 
-**PR Description:** [Draft or final PR description - much of the content above can be adapted]
+**PR Description:** 
+
+I refactored your HertzeBeat site's UI for its home website blog to a more modern layout of card-based grids. It is built from your defaults Docusaurus list-style design and design is inspired from the site you reference, answer.apache.org/blog/.
+Checklist
+[✅] I have read the Contributing Guide
+[✅] I have written the necessary doc or comment.
+[❌ ] I have added the necessary unit tests and all cases have passed.
+
+Add or update API
+[❌ ] I have added the necessary e2e tests and all cases have passed.
+
 
 **Maintainer Feedback:**
 - [Date]: [Summary of feedback received]
 - [Date]: [How you addressed it]
 
-**Status:** [Awaiting review / Iterating / Approved / Merged]
+**Status:** Awaiting Review
 
 ---
 
@@ -144,15 +157,19 @@ card-based grid layout for a starting refactored layout.
 
 ### Technical Skills Gained
 
-[What you learned technically]
+- First hand experience on docusaurus swizzling to override its default theme components.
+- Learned how to build a custom React card grid from useBlogPost() hook.
 
 ### Challenges Overcome
 
-[What was hard and how you solved it]
+- Learning docusaurus component structure despite having no experience working with the framework.
+- Issues trying to troubleshoot the right Node version for the project. Compatability was a factor
+  here as the it required Node v20+ and setting up the nvm.
 
 ### What I'd Do Differently Next Time
 
-[Reflection on your process]
+- Add necessary unit tests for the site and make sure they are all passing.
+- I would set up an nvm default version so I would not have to switch node versions per session.
 
 ---
 
