@@ -89,23 +89,21 @@ Using UMPIRE framework (adapted):
 
 ## Testing Strategy
 
-### Unit Tests
+### Unit Tests / Integration Tests
 
-- [ ] Test case 1: [Description]
-- [ ] Test case 2: [Description]
-- [ ] Test case 3: [Description]
-
-### Integration Tests
-
-- [ ] Integration scenario 1
-- [ ] Integration scenario 2
+- [✅] Automated Tests:
+I have not added any unit or integration tests for my contribution. My changes
+only affect the UI of HertzBeat's Docusaurus documentation site in the "home/"
+folder, which is not covered by the project's unit or e2e test suites. There
+are also no existing test files or helpers for the site's React components
+that new tests could follow. 
 
 ### Manual Testing
-
-[What you tested manually and results]
-I ran npm run start to launch the program locally with Node v20.20.2. It verified that the blog page at that local
-server renders a 3-column card grid with titles and other relevant information. I also confirmed that responsive
-behavior as well is present, featuring hover effects on cards.
+Ran "npm run start" locally with Node v20.20.2 and verified the blog page at
+http://localhost:3000/blog. It renders a 3 column card grid with tags, titles,
+descriptions, dates, and author names that has a responsive behavior at
+smaller breakpoints and hover effects on cards. I compared the result
+side-by-side against the reference design at https://answer.apache.org/blog/.
 
 ---
 
@@ -139,14 +137,13 @@ I refactored your HertzeBeat site's UI for its home website blog to a more moder
 Checklist
 [✅] I have read the Contributing Guide
 [✅] I have written the necessary doc or comment.
-[❌ ] I have added the necessary unit tests and all cases have passed.
+[❌] I have added the necessary unit tests and all cases have passed.
 
 Add or update API
-[❌ ] I have added the necessary e2e tests and all cases have passed.
+[❌] I have added the necessary e2e tests and all cases have passed.
 
 
 **Maintainer Feedback:**
-
 - July 4, 2026: Maintainer @Duansg merged the latest "master" into my "refactor-blog-ui" branch to keep the PR up to date and mergeable. No review changes requested yet.
 - Response: Synced my local branch with "git pull" to stay current. Monitoring the PR for review comments.
 
