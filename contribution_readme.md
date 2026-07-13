@@ -68,7 +68,7 @@ Using UMPIRE framework (adapted):
 
 **Match:** Our answer apache website, answer.apache.org/blog, uses a similar Docusaurus setup with some customized blog components in its design. The "home/src/" directory in HertzBeat is where custom components already exist and where new ones will be added.
 
-**Plan:** [Step-by-step implementation plan]
+**Plan:**
 1. Explore - Explore the "home/src/" directory in HertzBeat to understand the component structures.
 2. Swizzle - Use Docusaurus swizzling to eject and change default Docusaurus components.
 3. Build   - Build a custom card-based grid layout with React, JSX, and CSS.
@@ -118,9 +118,12 @@ card-based grid layout for a starting refactored layout.
 - **Files modified:**
     - "home/src/theme/BlogPostItems/index.js" - (Created) Swizzle to refactored card grid layout
     - "home/src/theme/BlogPostItems/styles.css" (Created) Styles the BlogCards and the Grids
+    - "home/src/pages/index.js" - (Modified) Fixed broken hero logo image path (was pointing at a
+       raw filesystem path instead of a static asset URL) and added a ".heroLogo" class to size it
+    - "home/src/pages/styles.module.css" - (Modified) Added ".heroLogo" sizing rule
 - **Key commits:** 
     - https://github.com/iamSerafinnn/Hertzbeat-Site-Refactor/tree/refactor-blog-ui
-- **Approach decisions:** [Why you chose certain approaches]
+- **Approach decisions:**
     - Used swizzling instead of wrapping. This allows me to have full control of over the blog list
       rendering into a card grid instead.
     - Used CSS Grid for layout to keep dependencies minimal instead of using a UI library.
@@ -137,15 +140,19 @@ I refactored your HertzeBeat site's UI for its home website blog to a more moder
 Checklist
 [✅] I have read the Contributing Guide
 [✅] I have written the necessary doc or comment.
-[❌] I have added the necessary unit tests and all cases have passed.
+[N/A] I have added the necessary unit tests and all cases have passed.
 
 Add or update API
-[❌] I have added the necessary e2e tests and all cases have passed.
+[N/A] I have added the necessary e2e tests and all cases have passed.
 
 
 **Maintainer Feedback:**
 - July 4, 2026: Maintainer @Duansg merged the latest "master" into my "refactor-blog-ui" branch to keep the PR up to date and mergeable. No review changes requested yet.
 - Response: Synced my local branch with "git pull" to stay current. Monitoring the PR for review comments.
+
+- July 12, 2026: Applied fixes from GitHub Copilot's automated review Also fixed the HertzBeat logo not rendering in the hero title, don't know how that happened.
+- Response: Committed and pushed all changes to the PR branch. I am still awaiting maintainer review.
+
 
 **Status:** Awaiting Review
 
@@ -172,11 +179,6 @@ Add or update API
 ---
 
 ## Resources Used
-
-- [Link to helpful documentation]
-- [Tutorial or Stack Overflow post that helped]
-- [GitHub issues or discussions that helped]
-
 - [Apache HertzBeat Issue #2075](https://github.com/apache/hertzbeat/issues/2075)
 - [Apache Answer Blog (design reference)](https://answer.apache.org/blog/)
 - [Docusaurus Documentation](https://docusaurus.io/docs)
