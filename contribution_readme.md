@@ -3,7 +3,7 @@
 **Contribution Number:** [1 / 2 / 3]  
 **Student:** Serafin O. Gargantiel III.
 **Issue:** https://github.com/apache/hertzbeat/issues/2075
-**Status:** Phase IV - In Progress
+**Status:** Closed and not merged. The issue #2075 was resolved through another PR #4219
 
 ---
 
@@ -153,8 +153,11 @@ Add or update API
 - July 12, 2026: Applied fixes from GitHub Copilot's automated review Also fixed the HertzBeat logo not rendering in the hero title, don't know how that happened.
 - Response: Committed and pushed all changes to the PR branch. I am still awaiting maintainer review.
 
+- July 26, 2026: The maintainer, @tomsun28, closed my PR #4182. @tomsun28 mentioned that the issue #2075 was resolved by another contributor PR #4219. It had a much broader scope of categories that are backed by "blog/tags.yml", cover images, and localized label/dates. This PR was merged instead of mine.
+- Response: I acknowledged the closure and respected the maintainer's decision. No further action taken from me.
 
-**Status:** Awaiting Review
+
+**Status:** Closed and not merged. The issue #2075 was resolved through another PR #4219
 
 ---
 
