@@ -1,6 +1,6 @@
-# Contribution [#]: Refactor Home Website Blog Layout UI
+# Contribution [2]: Refactor Home Website Blog Layout UI
 
-**Contribution Number:** [1 / 2 / 3]  
+**Contribution Number:** 2 
 **Student:** Serafin O. Gargantiel III.
 **Issue:** https://github.com/apache/hertzbeat/issues/2075
 **Status:** Closed and not merged. The issue #2075 was resolved through another PR #4219
@@ -135,15 +135,26 @@ card-based grid layout for a starting refactored layout.
 **PR Link:** https://github.com/apache/hertzbeat/pull/4182
 
 **PR Description:** 
+Closes #2075
 
-I refactored your HertzeBeat site's UI for its home website blog to a more modern layout of card-based grids. It is built from your defaults Docusaurus list-style design and design is inspired from the site you reference, answer.apache.org/blog/.
+Before the process of refactoring, the layout of the website were just a plain list of written text documentation. There is no structured layout of cards, images, and modern styling.
+
+I refactored your HertzBeat site's UI for its home website blog to a more modern layout of card-based grids for the issue #2075. It is written in Docusaurus and React JS open source frameworks for frontend and web development.
+
+After refactoring the first thing the user sees is a main title page of HertzBeat, a big title, slogan, and a quickstart button that brings the user to the list of documentation like the previous design. The user can further scroll down and find blog cards of three core features and a swiper of images below it. This creates a clean first impression of a modern like design with images and components to the site.
+
+By using a refactoring feature provided by Docusaurus, component swizzling allows me to replace and wrap default list-style theme components made by the maintainers themselves and transformed them into my own custom React Code in index.js and style.css.
+
+Upon continued progress, a separate fix made by a different PR, #4219 was eventually merged by the maintainers and not this. The issue #2075 was closed and the issue was resolved by a different PR.
+
 Checklist
-[✅] I have read the Contributing Guide
-[✅] I have written the necessary doc or comment.
-[N/A] I have added the necessary unit tests and all cases have passed.
-
-Add or update API
-[N/A] I have added the necessary e2e tests and all cases have passed.
+ [✅] Contribution Guide: I have read the Contributing Guide
+ [✅] Documentation & Comments: I have written the necessary document or 
+      comment.
+[N/A] Unit Tests: No necessary unit tests cases is  
+      necessary for this fix as it just depends on UI redesign and not logic or bug related problems.
+[N/A] API: No API is update or added in this program. 
+      This is just a means of redesigning a website interface using React components.
 
 
 **Maintainer Feedback:**
@@ -165,20 +176,26 @@ Add or update API
 
 ### Technical Skills Gained
 
-- First hand experience on docusaurus swizzling to override its default theme components.
-- Learned how to build a custom React card grid from useBlogPost() hook.
+- First hand experience on docusaurus swizzling to override its 
+  default theme components.
+- Learned how to build a custom React card grid from useBlogPost
+  () hook.
+- First time working as an open source contributor in GitHub.
 
 ### Challenges Overcome
 
-- Learning docusaurus component structure despite having no experience working with the framework.
-- Issues trying to troubleshoot the right Node version for the project. Compatability was a factor
-  here as the it required Node v20+ and setting up the nvm.
+- Learning docusaurus component structure despite having no   
+  experience working with the framework.
+- Issues trying to troubleshoot the right Node version for the 
+  project. Apparently, Docusaurus swizzling is uncompatable with the version of Node.js I had installed by default. Compatability was a factor here as the it required Node v20+ and setting up the nvm.
 
 ### What I'd Do Differently Next Time
 
-- Add necessary unit tests for the site and make sure they are all passing.
-- I would set up an nvm default version so I would not have to switch node versions per session.
+- I constantly have to switch to node versions to run this program. I worked on other projects using Node.js and apparently, working with Docusaurus Swizzling requires me to use a newer version of Node.js. For next time, I can try to set up a global default Node.js version using NVM (Node Version Manager). Using this nvm default version would prevent me from having to manually switch node versions per session.
 
+- Refactoring was only made with a main page redesign. For further improvements, I can always other parts of the blog site like the text documentation itself. Create more structured layout of texts and even convert them into more unique card designs.
+
+- I have never explicitly @mentioned or requested review from the maintainer after redesigning it myself and open the PR. Upon refactoring, I just open a pull request and just waited for the maintainer to find it. For next time contributions, I can always reach out to the maintainer after finishing my work so that they can review it more quickly.
 ---
 
 ## Resources Used
